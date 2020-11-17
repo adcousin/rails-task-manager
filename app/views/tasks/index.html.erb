@@ -1,0 +1,19 @@
+<div class="container">
+  <h1 class="my-3">Tasks (index)</h1>
+  <ul class="list-group">
+    <% @tasks.each do |task| %>
+      <li class="list-group-item">
+        <i class="far fa-<%= 'check-' if task.completed %>square"></i>
+        <%= link_to "#{task.title}", task_path(task) %>
+        <%= link_to "<i class='fas fa-dumpster-fire'></i>".html_safe,
+            task_path(task),
+            method: :delete,
+            data: { confirm: "Are you sure you want to delete #{task.title}?" } %>
+      </li>
+    <% end %>
+  </ul>
+
+  <div class="my-3">
+    <%= link_to "Add a new task", new_task_path %>
+  </div>
+</div>

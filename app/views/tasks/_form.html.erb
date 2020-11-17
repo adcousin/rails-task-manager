@@ -1,0 +1,6 @@
+  <%= simple_form_for(@task) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :details %>
+    <%= f.input :completed, as: :boolean unless @task.new_record?  %>
+    <%= f.submit %>
+  <% end %>

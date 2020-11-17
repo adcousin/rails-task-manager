@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Edit Task</h1>
+
+  <%= render "form", task: @task %>
+
+  <div class="my-3">
+    <%= link_to "<i class='fas fa-undo pr-2'></i> Back to index".html_safe, tasks_path %>
+  </div>
+</div>

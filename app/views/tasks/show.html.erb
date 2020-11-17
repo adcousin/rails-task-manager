@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="d-flex justify-content-between align-items-center">
+    <h1 class="my-3">Task (show)</h1>
+    <div class="my-3 btn btn-light border">
+      <%= link_to '<i class="fas fa-pen pr-2"></i> Edit task'.html_safe, edit_task_path %>
+    </div>
+  </div>
+  <div class="border rounded text-center py-5 w-50 bg-light my-3">
+    <%= @task.details %>
+  </div>
+  <div class="my-3">
+    <%= @task.title %>
+    (Id #<%= @task.id %>)
+  </div>
+  <div class="my-3">
+    <i class="far fa-<%= 'check-' if @task.completed %>square"></i>
+    <%= "#{@task.completed ? "This task is completed" : "This task is not completed yet."}" %>
+  </div>
+  <div class="my-3">
+    <%= link_to "<i class='fas fa-undo pr-2'></i> Back to index".html_safe, tasks_path %>
+  </div>
+
+
+</div>
